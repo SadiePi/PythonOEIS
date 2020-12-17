@@ -24,7 +24,7 @@ from math import floor, sqrt
 # Utility functions for converting between A and G functions
 # For when the best way to implement one is to just use the other
 def __G2A(g, n):
-    for i in range(n-1):
+    for _ in range(n-1):
         next(g)
     return next(g)
 
@@ -221,7 +221,7 @@ def A000115(n):
     return (n+4)**2//20
 
 def G000115(limit=float('inf')):
-    yield from __A2G(A000115(), limit)
+    yield from __A2G(A000115, limit, 0)
 
 def A000196(limit=float('inf')):
     from math import sqrt, floor
