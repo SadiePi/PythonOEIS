@@ -9,11 +9,13 @@ Skipped sequences:
  * A000001 - No full formula, subject not sufficiently understood
  * A000003 - No full formula, subject not sufficiently understood
  * A000009 - No understood formula, will look again later
- 
+
 Preempted sequences: 
  * A000040 - Primes, very useful
  * A000115 - Used in 000008
  * A000196 - Previously used in another sequence
  * A005132 - Recaman's Sequence, just fun
+
+Once many more sequences are implemented, I'll be refactoring many of them to use crossref formulas, hopefully simplifying them.
 
 I'm not sure what the best way to structure this is. Currently my plan is to have one monolithic file with every function, making imports easy (from OEIS import G000040 as primes) but making the file huge. One possibility is to split it into multiple modules with maybe a few thousand each, making imports a bit less nice (from OEIS03 import A031245), but the files smaller. I've also considered trying to group them into more specific submodules, like OEIS.GroupTheory, OEIS.NumberTheory, etc but that seems unfeasible. 
