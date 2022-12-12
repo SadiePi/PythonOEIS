@@ -130,7 +130,7 @@ def A000009(n):
     for i in range(1, n+1):
         for j in range(n, i-1, -1):
             steps[j] += steps[j-i]
-    return steps[n] - 1
+    return steps[n]
 
 def G000009(limit=float('inf')):
     yield from __A2G(A000009, limit, 0)
