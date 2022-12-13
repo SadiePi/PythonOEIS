@@ -126,10 +126,14 @@ def G000008(limit=float('inf')):
 
 # number of partitions of n into odd parts
 def A000009(n):
-    raise NotImplementedError()
+    steps = [1] + [0] * n
+    for i in range(1, n+1):
+        for j in range(n, i-1, -1):
+            steps[j] += steps[j-i]
+    return steps[n]
 
 def G000009(limit=float('inf')):
-    raise NotImplementedError()
+    yield from __A2G(A000009, limit, 0)
 
 # totient of n
 def A000010(n):
